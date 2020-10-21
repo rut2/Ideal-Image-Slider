@@ -10,7 +10,7 @@ and core features I wanted to include:
 * Responsive
 * HiDPI (retina) support
 * ARIA support
-* Extremely simple to setup (no dependancies)
+* Extremely simple to setup (no dependencies)
 * Very extensible
 * Uses progressive enhancement
 * Open source (goes without saying)
@@ -29,10 +29,17 @@ And, as an example, here are some features that *should not* be in the core and 
 
 ## Demos
 
-* [Standard Slider](http://gilbitron.github.io/Ideal-Image-Slider/demo/standard-slider.html)
-* [Using the API](http://gilbitron.github.io/Ideal-Image-Slider/demo/using-the-api.html)
-* [Using Events](http://gilbitron.github.io/Ideal-Image-Slider/demo/using-events.html)
-* [Multiple Sliders](http://gilbitron.github.io/Ideal-Image-Slider/demo/multiple-sliders.html)
+* [Standard Slider](http://idealimageslider.com/demo/standard-slider.html)
+* [With Links](http://idealimageslider.com/demo/links.html)
+* [Using the API](http://idealimageslider.com/demo/using-the-api.html)
+* [Using Events](http://idealimageslider.com/demo/using-events.html)
+* [Multiple Sliders](http://idealimageslider.com/demo/multiple-sliders.html)
+
+## Extensions
+
+* [Bullet Navigation](https://github.com/gilbitron/Ideal-Image-Slider/tree/master/extensions/bullet-nav)
+* [Captions](https://github.com/gilbitron/Ideal-Image-Slider/tree/master/extensions/captions)
+* [Third Party Extensions](https://github.com/gilbitron/Ideal-Image-Slider/wiki/Third-Party-Extensions)
 
 ## Requirements
 
@@ -72,9 +79,10 @@ like this:
 
 ```html
 <div id="slider">
-	<img src="img/1.jpg" src="" alt="Minimum required attributes">
+	<img src="img/1.jpg" alt="Minimum required attributes">
 	<img data-src="img/2.jpg" src="" alt="Use data-src for on-demand loading">
 	<img data-src="img/3.jpg" data-src-2x="img/3@2x.jpg" src="" alt="Use data-src-2x for HiDPI devices">
+	<a href="http://example.com"><img data-src="img/4.jpg" src="" alt="Links work too"></a>
 	...
 </div>
 ```
@@ -98,7 +106,7 @@ If you want to tweak the settings or use the slider API it would look more like:
 var slider = new IdealImageSlider.Slider({
 	selector: '#slider',
 	height: 400, // Required but can be set by CSS
-	interval: 4000,
+	interval: 4000
 });
 slider.start();
 ```
@@ -111,7 +119,9 @@ in your CSS.
 |Setting|Default Value|Description|
 |---|---|---|
 |selector|`''`|CSS selector for the slider|
-|height|`400`|Height (in px) of the slider|
+|height|`'auto'`|Height of the slider. Can be `'auto'` (height changes depending on the height of the slide), a fixed px value (e.g. `400`) or an aspect ratio (e.g. `'16:9'`)|
+|initialHeight|`400`|If height is `'auto'` or an aspect ratio this is the height of the slider while the first image is loading|
+|maxHeight|`null`|If height is `'auto'` or an aspect ratio this is an optional max height in px for the slider (e.g. `800`)|
 |interval|`4000`|Time (in ms) to wait before changing to the next slide|
 |transitionDuration|`700`|Duration (in ms) of animated transition|
 |effect|`'slide'`|Transition effect (slide/fade by default)|
@@ -184,7 +194,19 @@ So you want to help out? That's awesome. Here is how you can do it:
 If you are submitting a pull request please adhere to the existing coding standards used throughout the code
 and only submit **1 feature/fix per pull request**. Pull requests containing multiple changes will be rejected.
 
+Note that if you submit a pull request you are aware that you are contributing to both the free (open source) version
+and the proprietary (commercial) version of the codebase and that your work may make money for Dev7studios.
+
 ## Credits
 
 Ideal Image Slider was created by [Gilbert Pellegrom](http://gilbert.pellegrom.me) from
-[Dev7studios](http://dev7studios.com). Released under the [MIT license](https://raw.githubusercontent.com/gilbitron/Ideal-Image-Slider/master/LICENSE).
+[Dev7studios](http://dev7studios.com). Released under the [GPL license](https://raw.githubusercontent.com/gilbitron/Ideal-Image-Slider/master/LICENSE).
+
+## Other Projects
+
+Check-out other stuff that we are working on : 
+
+* [ThemeIsle](https://themeisle.com)
+* [Codeinwp](https://codeinwp.com/blog/)
+* [Revive.social](https://revive.social)
+* [Mystock.photos](http://mystock.photos)
